@@ -21,6 +21,7 @@ public class Investment {
     private String name;
     private BigDecimal currentValue;
     private LocalDate purchaseDate;
+    private BigDecimal purchasePrice;
 
     @ManyToOne
     @JoinColumn(name = "portfolio_id")
@@ -28,6 +29,6 @@ public class Investment {
 
     @ManyToOne
     @JoinColumn(name = "asset_id")
-    private Asset asset;
+    private Project project;
 }
 
