@@ -26,7 +26,7 @@ public class ProjectService {
 
     public Project getProjectByUser(Long userId) {
         Optional<User> u = userRepository.findById(userId);
-        return projectRepository.findByUser(u)
+        return projectRepository.findByProjectOwner(u.get())
                 .orElseThrow(() -> new ResourceNotFoundException("Project not found"));
     }
 
